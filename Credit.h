@@ -1,6 +1,10 @@
 #pragma once
 #include <string>
 
+namespace Constants {
+	const std::string validPrefixes[] {"4", "5", "6", "37"};
+}
+
 /// <summary>
 /// Get the sum of the individual digits in a number.
 /// </summary>
@@ -16,3 +20,9 @@ int getSumOfDigits(int number);
 /// <returns>True if card number has given prefix. False otherwise</returns>
 bool startsWith(const std::string& cardNumber, const std::string& prefix);
 
+/// <summary>
+/// Checks if card number starts with "4", "5", "6", or "37"
+/// </summary>
+/// <param name="cardNumber">Card number.</param>
+/// <returns>True if card number is valid, false otherwise.</returns>
+bool hasValidPrefix(const std::string& cardNumber);
