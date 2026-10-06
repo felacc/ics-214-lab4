@@ -4,28 +4,26 @@
 
 int main()
 {
-	//int number{ 123 };
-	//std::cout << getSumOfDigits(number) << '\n';
+	std::string sampleCard = "34567";
 
-	//std::cout << startsWith(cardNumber1, "43") << '\n';
-	//std::cout << startsWith(cardNumber1, "23") << '\n'; 
-	std::string cardNumbers[]{ "4375123265462342", "5375123265462342", "6375123265462342", "3775123265462342", "2375123265462342" };
-	std::string simpleNumbers[]{ "12345", "11111", "12", "321", "11233", "9999", "77777"};
-//	int cardCount{ sizeof(cardNumbers) / sizeof(cardNumbers[0]) };
-//	for (int i = 0; i < cardCount; i++)
-//	{
-//		std::cout << cardNumbers[i] << ": " << hasValidPrefix(cardNumbers[i]) << '\n';
-//	}
+	std::cout << "Test getSumOfDigits(34567) == 25: " << getSumOfDigits(34567) << '\n';
 
-//	int cardCount{ sizeof(simpleNumbers) / sizeof(simpleNumbers[0]) };
-//	for (int i = 0; i < cardCount; i++)
-//	{
-//		std::cout << simpleNumbers[i] << ": " << sumOddDigitsRightToLeft(simpleNumbers[i]) << '\n';
-//	}
+	std::cout << "Test startsWith(\"34567\", \"3\") == 1: " << startsWith(sampleCard, "3") << '\n';
 
-	int cardCount{ sizeof(simpleNumbers) / sizeof(simpleNumbers[0]) };
-	for (int i = 0; i < cardCount; i++)
-	{
-		std::cout << simpleNumbers[i] << ": " << sumEvenDigitsRightToLeft(simpleNumbers[i]) << '\n'; 
-	}
+	std::cout << "Test hasValidPrefix(\"34567\") == 0: " << hasValidPrefix(sampleCard) << '\n';
+
+	std::cout << "Test hasValidPrefix(\"37567\") == 1: " << hasValidPrefix("37567") << '\n';
+	std::cout << "Test hasValidPrefix(\"47567\") == 1: " << hasValidPrefix("47567") << '\n';
+	std::cout << "Test hasValidPrefix(\"57567\") == 1: " << hasValidPrefix("57567") << '\n';
+	std::cout << "Test hasValidPrefix(\"67567\") == 1: " << hasValidPrefix("67567") << '\n';
+
+	std::cout << "Test sumOddDigitsRightToLeft(\"34567\") == 15: " << sumOddDigitsRightToLeft(sampleCard) << '\n';
+
+	std::cout << "Test sumEvenDigitsRightToLeft(\"34567\") == 11: " << sumEvenDigitsRightToLeft(sampleCard) << '\n';
+
+	std::string testArr[]{ "4388576018402626", "4388576018410707" };
+
+	std::cout << "Test isCardValid(\"4388576018402626\") == 0: " << isCardValid(testArr[0]) << '\n';
+
+	std::cout << "Test isCardValid(\"4388576018410707\") == 1: " << isCardValid(testArr[1]) << '\n';
 }                                                                                           

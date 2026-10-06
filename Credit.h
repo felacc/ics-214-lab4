@@ -42,3 +42,10 @@ int sumOddDigitsRightToLeft(const std::string& cardNumber);
 /// <param name="cardNumber">Card number.</param>
 /// <returns>Sum of even place digits.</returns>
 int sumEvenDigitsRightToLeft(const std::string& cardNumber);
+
+/// <summary>
+/// Checks if card number is valid based on Luhn's algorithm.
+/// </summary>
+/// <param name="cardNumber">Card number.</param>
+/// <returns>True if valid, false otherwise.</returns>
+bool isCardValid(const std::string& cardNumber);

@@ -71,3 +71,38 @@ int sumEvenDigitsRightToLeft(const std::string& cardNumber)
 	}
 	return sum;
 }
+
+bool isCardValid(const std::string& cardNumber)
+{
+	const int cardLength{ static_cast<int>(cardNumber.size()) };
+	
+	// Check card length requirements
+	if (cardLength < 13 || cardLength > 16)
+	{
+		return false;
+	}
+
+	// Check prefix
+	if (!hasValidPrefix(cardNumber))
+	{
+		return false;
+	}
+
+	// Sum even digits
+	int evenSum{ sumEvenDigitsRightToLeft(cardNumber) };
+
+	// Sum odd digits
+	int oddSum{ sumOddDigitsRightToLeft(cardNumber) };
+	
+	// Combine sums
+	int combinedSum{ evenSum + oddSum };
+	
+	// Check if divisible by 10
+	if (combinedSum % 10 == 0)
+	{
+		return true;
+	}
+	
+	// In all other cases, card is invalid
+	return false;
+}
