@@ -43,11 +43,31 @@ bool hasValidPrefix(const std::string& cardNumber)
 
 int sumOddDigitsRightToLeft(const std::string& cardNumber)
 {
-	const int cardLength{ static_cast<int>(cardNumber.length())};
 	int sum{};
-	for (int i = cardLength - 1; i >= 0; i -= 2)
+	int position{ 1 }; // rightmost digit is position 1
+	const int endIndex{ static_cast<int>(cardNumber.size()) - 1 }; // card length - 1 = index of last digit
+	for (int i = endIndex; i >= 0; i--, position++)
 	{
-		sum += static_cast<int>(cardNumber[i] - '0'); // cardNumber[i] returns a char and would get converted to ascii number
+		if (position % 2 == 1)
+		{
+			sum += cardNumber[i] - '0'; // cardNumber[i] is a char
+		}
+	}
+	return sum;
+}
+
+int sumEvenDigitsRightToLeft(const std::string& cardNumber)
+{
+	int sum{};
+	int position{ 1 }; // rightmost digit is position 1
+	const int endIndex{ static_cast<int>(cardNumber.size()) - 1}; // card length - 1 = index of last digit
+	for (int i = endIndex; i >= 0; i--, position++)
+	{
+		if (position % 2 == 0)
+		{
+			int digit{ cardNumber[i] - '0' } ; // cardNumber[i] is a char
+			sum += getSumOfDigits(digit * 2);
+		}
 	}
 	return sum;
 }

@@ -28,8 +28,17 @@ bool startsWith(const std::string& cardNumber, const std::string& prefix);
 bool hasValidPrefix(const std::string& cardNumber);
 
 /// <summary>
-/// Add up the odd-place digits from right to lef
+/// Add up the odd-place digits from right to left.
 /// </summary>
 /// <param name="cardNumber">Card number.</param>
 /// <returns>Sum of odd-place digits.</returns>
 int sumOddDigitsRightToLeft(const std::string& cardNumber);
+
+/// <summary>
+/// Add up the sum of even-place digits * 2. If the even-place digit * 2 
+/// results in a multi-digit number, add the digits together, and add that to
+/// the sum.
+/// </summary>
+/// <param name="cardNumber">Card number.</param>
+/// <returns>Sum of even place digits.</returns>
+int sumEvenDigitsRightToLeft(const std::string& cardNumber);
