@@ -10,9 +10,16 @@ int main()
 	//std::cout << startsWith(cardNumber1, "43") << '\n';
 	//std::cout << startsWith(cardNumber1, "23") << '\n'; 
 	std::string cardNumbers[]{ "4375123265462342", "5375123265462342", "6375123265462342", "3775123265462342", "2375123265462342" };
-	int cardCount{ sizeof(cardNumbers) / sizeof(cardNumbers[0]) };
+	std::string simpleNumbers[]{ "12345", "11111", "12", "321", "11233" }; // 9, 3, 2, 4, 6
+//	int cardCount{ sizeof(cardNumbers) / sizeof(cardNumbers[0]) };
+//	for (int i = 0; i < cardCount; i++)
+//	{
+//		std::cout << cardNumbers[i] << ": " << hasValidPrefix(cardNumbers[i]) << '\n';
+//	}
+
+	int cardCount{ sizeof(simpleNumbers) / sizeof(simpleNumbers[0]) };
 	for (int i = 0; i < cardCount; i++)
 	{
-		std::cout << cardNumbers[i] << ": " << hasValidPrefix(cardNumbers[i]) << '\n';
+		std::cout << simpleNumbers[i] << ": " << sumOddDigitsRightToLeft(simpleNumbers[i]) << '\n';
 	}
 }                                                                                           

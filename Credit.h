@@ -26,3 +26,10 @@ bool startsWith(const std::string& cardNumber, const std::string& prefix);
 /// <param name="cardNumber">Card number.</param>
 /// <returns>True if card number is valid, false otherwise.</returns>
 bool hasValidPrefix(const std::string& cardNumber);
+
+/// <summary>
+/// Add up the odd-place digits from right to lef
+/// </summary>
+/// <param name="cardNumber">Card number.</param>
+/// <returns>Sum of odd-place digits.</returns>
+int sumOddDigitsRightToLeft(const std::string& cardNumber);

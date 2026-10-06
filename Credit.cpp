@@ -40,3 +40,14 @@ bool hasValidPrefix(const std::string& cardNumber)
 	
 	return false;
 }
+
+int sumOddDigitsRightToLeft(const std::string& cardNumber)
+{
+	const int cardLength{ static_cast<int>(cardNumber.length())};
+	int sum{};
+	for (int i = cardLength - 1; i >= 0; i -= 2)
+	{
+		sum += static_cast<int>(cardNumber[i] - '0'); // cardNumber[i] returns a char and would get converted to ascii number
+	}
+	return sum;
+}
