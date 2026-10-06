@@ -12,3 +12,17 @@ int getSumOfDigits(int number)
 
 	return sum;
 }
+
+bool startsWith(const std::string& cardNumber, const std::string& prefix)
+{
+	const int prefixLength = prefix.length();
+	
+	const std::string cardNumberPrefix = cardNumber.substr(0, prefixLength);
+
+	if (cardNumberPrefix == prefix)
+	{
+		return true;
+	}
+
+	return false;
+}
